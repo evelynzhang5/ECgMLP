@@ -1,0 +1,26 @@
+# Import necessary libraries
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load the input image
+image_path = "input_image.jpg"
+input_image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE) # Load as grayscale image
+
+if input_image is None:
+    raise FileNotFoundError(f"Image not found at path: {image_path}")
+
+# 1. Normalization
+# Normalize pixel values between 0 and 255
+normalized_image = np.zeros_like(input_image)
+normalized_image = cv2.normalize(input_image, normalized_image, 0, 255, cv2.NORM_MINMAX)
+
+# Display the result
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+plt.title("Original Image")
+plt.imshow(input_image, cmap='gray')
+plt.subplot(1, 2, 2)
+plt.title("Normalized Image")
+plt.imshow(normalized_image, cmap='gray')
+plt.show()
