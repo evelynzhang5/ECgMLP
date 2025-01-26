@@ -35,3 +35,6 @@ from tensorflow.keras import layers
 import tensorflow_addons as tfa
 from sklearn.model_selection import train_test_split
 ```
+**Kindly cite the article and code if you use it:**
+
+[![DOI](https://zenodo.org/badge/910827354.svg)](https://doi.org/10.5281/zenodo.14743245)
